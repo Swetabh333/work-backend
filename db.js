@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'
 
-const mongoURI ='mongodb://0.0.0.0:27017/bank'
+dotenv.config()
+
+const mongoURI = process.env.DATABASE
 
 const connect = async () => {
     await mongoose.connect(mongoURI);

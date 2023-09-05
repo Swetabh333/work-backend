@@ -14,6 +14,7 @@ import router11 from './routes/router11.js';
 import connect from './db.js';
 import Daily from './Models/Daily.js';
 
+
 connect();
 
 const app = express();
