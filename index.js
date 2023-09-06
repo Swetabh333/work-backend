@@ -11,6 +11,7 @@ import router8 from './routes/router8.js';
 import router9 from './routes/router9.js';
 import router10 from './routes/router10.js';
 import router11 from './routes/router11.js';
+import router12 from './routes/router12.js';
 import connect from './db.js';
 import Daily from './Models/Daily.js';
 
@@ -33,6 +34,7 @@ app.use('/update',router8);
 app.use('/delete',router9);
 app.use('/fetchdata',router10);
 app.use('/commitdata',router11)
+app.use('/csvdata',router12)
 
 
 
