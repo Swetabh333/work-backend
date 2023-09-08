@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(bodyParser.json());
 
-
+app.use('/files',express.static('./public/files'))
 app.use("/",router1)
 app.use("/adminVerif",router4);
 app.use("/checkuser",router5);
