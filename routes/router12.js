@@ -4,7 +4,11 @@ import Quarterly from '../Models/Quarterly.js';
 import Yearly from '../Models/Yearly.js';
 import fastcsv from 'fast-csv';
 import fs, { write } from 'fs';
+import dotenv from 'dotenv'
 
+dotenv.config()
+
+const BASE_URL = process.env.BASE_URL
 
 const router = express.Router()
 
@@ -40,7 +44,7 @@ router.post('/',async(req,res)=>{
 
         writeableStream.on('finish',()=>{
             res.status(200).json({
-                downloadUrl:'http://localhost:8080/files/export/users.csv'
+                downloadUrl:`${BASE_URL}/files/export/users.csv`
             });
         });
 
