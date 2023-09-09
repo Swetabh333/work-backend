@@ -25,7 +25,7 @@ router.post('/',async(req,res)=>{
             else{
                 res.status(400).send('Deletion unsuccessful');
             }
-        }else if (req.body.table='quarterly'){
+        }else if (req.body.table==='quarterly'){
             let del = await Quarterly.deleteOne({
                 RO:req.body.RO.toUpperCase(),
                 QUARTER: quarter
@@ -38,7 +38,7 @@ router.post('/',async(req,res)=>{
         }else{
             let del = await Yearly.deleteOne({
                 RO:req.body.RO.toUpperCase(),
-                YEAR:year
+                YEAR:parseInt(year)
             })
             console.log(del);
             if(del.deletedCount!==0){res.status(200).send('Deleted successfully');}
